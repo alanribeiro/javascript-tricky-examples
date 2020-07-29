@@ -44,7 +44,7 @@
     /**
      * ANSWER: "1, 2, 3, 4, 5, 6".
      * 
-     * The '+' operator tries to convert the arrays into numbers. Since it's not possible, the arrays will be converted into strings and the operator concatenates the values.
+     * The '+' are used both for sum and concatenation. If any of the values are not numeric then JavaScript will concatenate the values.
      * And what if we want to really join the two arrays?
      * We can easily do this using the following: 
      */
