@@ -1,6 +1,6 @@
 /**
  * JavaScript trick examples
- */
+*/
 
 /* #1. What the heck the variable 'i' is? */
     // Imagine we have let i = ? 
@@ -36,4 +36,24 @@
      * You may check this link > https://medium.com/@ntgard/why-nan-nan-3d41af988d30 for an explanation but keep in mind that NaN === NaN returns false.
      */
 
+/* #4. What will be printed by console.log? */
+    console.log('2' + '2' - '2');
 
+    /**
+     * ANSWER: 20
+     * 
+     * In JavaScript the plus operator performs both sum and concatenation. First, JavaScrit will concatenate
+     * 2 + 2 since at least one of the values are a string so the operation results in '22'.
+     * The minus operator is used only for math operations and if there's any value not numeric JavaScript
+     * uses type coercion to convert the string value to numeric. So '22' - '2' becomes 22 - 2 that results in 20.
+     */
+
+/* #5. What will be printed by console.log? */
+    console.log(7 > 6 > 5);
+
+    /**
+     * ANSWER: false
+     * 
+     * When performing 7 > 6 we get the value true because 7 is greater than 6 and the next operation becomes true > 5 which is false.
+     * The result is false because when using the operator '>' true becomes the number 1 which is not greater than 5.
+     */

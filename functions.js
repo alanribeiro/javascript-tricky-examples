@@ -1,8 +1,8 @@
 /**
  * JavaScript functions tricky examples
- */
+*/
 
- /* #1. What will be the ouput of the code below? */
+/* #1. What will be the ouput of the code below? */
     (function() {
         let a = b = 100;
     })();
@@ -41,8 +41,42 @@
     anyFunction();
 
     /**
-     * ANSWER: Alan and surname is not defined.
+     * ANSWER: First console -> 'Alan' and second console -> surname is not defined.
      * 
      * Variables declared with 'let' has block scope and variables declared with 'var' has function scope, so 'name' is reachable in the whole 'anyFunction' while 'surname' is only reachable
      * in the the IF block. 
      */
+
+/* #3. Explain why the code above doesn't show the given arguments */
+    const arrowFunction1 = () => arguments;
+    console.log(arrowFunction1(1, 2));
+
+    /**
+     * ANSWER: Arrow functions doesn't have the object 'arguments', it's not binded to it.
+     * 
+     * To get the given arguments you can do like this:
+     */
+
+    const arrowFunction1 = (...args) => args; // or use regular functions like function(){ return arguments }
+
+/* #4. What is returned by the function below? */
+    const anyFunction = function() {
+        return 
+        {
+            message: 'hi',
+        }
+    }
+
+    /**
+     * ANSWER: undefined
+     * 
+     * The reason the function above returns undefined is because there's nothing after the 'return' so JavaScript
+     * reads the code like 'return;' which returns undefined.
+     * To fix it simply do:
+     */
+
+     const anyFunction = function() {
+         return {
+             message: 'hi',
+          }
+     }
